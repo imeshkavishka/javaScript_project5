@@ -24,6 +24,7 @@ function getRandomQuestions(questions, numQuestions){
     return shuffled.slice(0, numQuestions)
 }
 
+
 function askQuestion (questions){
     console.log(question.question)
     for (let i=0; i < question.options.length;i++){
@@ -56,3 +57,4 @@ const totalTime =Date.now() - startTime
 console.log('Correct :' ,correct)
 console.log('Time :', Math.round(totalTime/1000)+"s")
 console.log('Score :', Math.round((correct / numQuestions)*100)+"%")
+

@@ -19,13 +19,13 @@ function getRandomQuestions(questions, numQuestions){
     }
 
     const shuffled = questions.sort(() =>{
-        return 0.5-Math.random()
+        return 0.5 - Math.random()
     })
     return shuffled.slice(0, numQuestions)
 }
 
 
-function askQuestion (questions){
+function askQuestion (question){
     console.log(question.question)
     for (let i=0; i < question.options.length;i++){
         const option =question.options[i]
@@ -44,16 +44,16 @@ const numQuestions = parseInt(prompt("Enter the number of questions : "))
 const questions = loadQuestions()
 const randomQuestions =getRandomQuestions(questions, numQuestions)
 
-let correct =0;
+let correct = 0;
 const startTime = Date.now()
 
 for(let question of randomQuestions){
-    const isCorrect=askQuestion(question)
+    const isCorrect = askQuestion(question)
     console.log()
     if (isCorrect) correct++
 }
 
-const totalTime =Date.now() - startTime
+const totalTime = Date.now() - startTime
 console.log('Correct :' ,correct)
 console.log('Time :', Math.round(totalTime/1000)+"s")
 console.log('Score :', Math.round((correct / numQuestions)*100)+"%")
